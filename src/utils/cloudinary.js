@@ -2,7 +2,19 @@ import {v2 as cloudinary} from 'cloudinary';
 import fs from 'fs'
           
 cloudinary.config({ 
-  cloud_name: 'dvr1rap7t', 
-  api_key: '435346541625971', 
-  api_secret: 'A9mxWhs5Lu5T3XsT16hMiVTVaTA' 
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET 
 });
+
+const uploadOnCloudinary =  async (localStorage) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
+
+cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
+  { public_id: "olympic_flag" }, 
+  function(error, result) {console.log(result); });
